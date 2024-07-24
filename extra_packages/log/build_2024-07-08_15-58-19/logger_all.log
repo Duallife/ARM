@@ -1,0 +1,136 @@
+[0.075s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.075s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=16, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x7f2c2354e350>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7f2c2354de10>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7f2c2354de10>>)
+[0.206s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.206s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.206s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.206s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.206s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.206s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.206s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/duallife/projects/ARM/ARM/extra_packages'
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.207s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.207s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.214s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.214s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.214s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.214s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.214s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.215s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.215s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.215s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.215s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.215s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.215s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.215s] Level 1:colcon.colcon_core.package_identification:_identify(interface) by extensions ['ignore', 'ignore_ament_install']
+[0.215s] Level 1:colcon.colcon_core.package_identification:_identify(interface) by extension 'ignore'
+[0.215s] Level 1:colcon.colcon_core.package_identification:_identify(interface) by extension 'ignore_ament_install'
+[0.215s] Level 1:colcon.colcon_core.package_identification:_identify(interface) by extensions ['colcon_pkg']
+[0.215s] Level 1:colcon.colcon_core.package_identification:_identify(interface) by extension 'colcon_pkg'
+[0.215s] Level 1:colcon.colcon_core.package_identification:_identify(interface) by extensions ['colcon_meta']
+[0.215s] Level 1:colcon.colcon_core.package_identification:_identify(interface) by extension 'colcon_meta'
+[0.215s] Level 1:colcon.colcon_core.package_identification:_identify(interface) by extensions ['ros']
+[0.215s] Level 1:colcon.colcon_core.package_identification:_identify(interface) by extension 'ros'
+[0.217s] DEBUG:colcon.colcon_core.package_identification:Package 'interface' with type 'ros.ament_cmake' and name 'interface'
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.217s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.217s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.217s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.217s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.217s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.240s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.240s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.243s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 399 installed packages in /opt/ros/humble
+[0.244s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.278s] Level 5:colcon.colcon_core.verb:set package 'interface' build argument 'cmake_args' from command line to 'None'
+[0.278s] Level 5:colcon.colcon_core.verb:set package 'interface' build argument 'cmake_target' from command line to 'None'
+[0.278s] Level 5:colcon.colcon_core.verb:set package 'interface' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.278s] Level 5:colcon.colcon_core.verb:set package 'interface' build argument 'cmake_clean_cache' from command line to 'False'
+[0.278s] Level 5:colcon.colcon_core.verb:set package 'interface' build argument 'cmake_clean_first' from command line to 'False'
+[0.278s] Level 5:colcon.colcon_core.verb:set package 'interface' build argument 'cmake_force_configure' from command line to 'False'
+[0.278s] Level 5:colcon.colcon_core.verb:set package 'interface' build argument 'ament_cmake_args' from command line to 'None'
+[0.278s] Level 5:colcon.colcon_core.verb:set package 'interface' build argument 'catkin_cmake_args' from command line to 'None'
+[0.278s] Level 5:colcon.colcon_core.verb:set package 'interface' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.278s] DEBUG:colcon.colcon_core.verb:Building package 'interface' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/duallife/projects/ARM/ARM/extra_packages/build/interface', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/duallife/projects/ARM/ARM/extra_packages/install/interface', 'merge_install': False, 'path': '/home/duallife/projects/ARM/ARM/extra_packages/interface', 'symlink_install': False, 'test_result_base': None}
+[0.278s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.279s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.279s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/duallife/projects/ARM/ARM/extra_packages/interface' with build type 'ament_cmake'
+[0.279s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/duallife/projects/ARM/ARM/extra_packages/interface'
+[0.281s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.281s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.281s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.290s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/duallife/projects/ARM/ARM/extra_packages/build/interface': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/duallife/projects/ARM/ARM/extra_packages/interface -DCMAKE_INSTALL_PREFIX=/home/duallife/projects/ARM/ARM/extra_packages/install/interface
+[1.454s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/duallife/projects/ARM/ARM/extra_packages/build/interface' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/duallife/projects/ARM/ARM/extra_packages/interface -DCMAKE_INSTALL_PREFIX=/home/duallife/projects/ARM/ARM/extra_packages/install/interface
+[1.456s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/duallife/projects/ARM/ARM/extra_packages/build/interface': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/duallife/projects/ARM/ARM/extra_packages/build/interface -- -j16 -l16
+[2.855s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/duallife/projects/ARM/ARM/extra_packages/build/interface' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/duallife/projects/ARM/ARM/extra_packages/build/interface -- -j16 -l16
+[2.942s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/duallife/projects/ARM/ARM/extra_packages/build/interface': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/duallife/projects/ARM/ARM/extra_packages/build/interface
+[3.001s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(interface)
+[3.002s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/duallife/projects/ARM/ARM/extra_packages/build/interface' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/duallife/projects/ARM/ARM/extra_packages/build/interface
+[3.004s] Level 1:colcon.colcon_core.environment:checking '/home/duallife/projects/ARM/ARM/extra_packages/install/interface' for CMake module files
+[3.004s] Level 1:colcon.colcon_core.environment:checking '/home/duallife/projects/ARM/ARM/extra_packages/install/interface' for CMake config files
+[3.005s] Level 1:colcon.colcon_core.shell:create_environment_hook('interface', 'cmake_prefix_path')
+[3.005s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/duallife/projects/ARM/ARM/extra_packages/install/interface/share/interface/hook/cmake_prefix_path.ps1'
+[3.005s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/duallife/projects/ARM/ARM/extra_packages/install/interface/share/interface/hook/cmake_prefix_path.dsv'
+[3.006s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/duallife/projects/ARM/ARM/extra_packages/install/interface/share/interface/hook/cmake_prefix_path.sh'
+[3.006s] Level 1:colcon.colcon_core.environment:checking '/home/duallife/projects/ARM/ARM/extra_packages/install/interface/lib'
+[3.006s] Level 1:colcon.colcon_core.shell:create_environment_hook('interface', 'ld_library_path_lib')
+[3.006s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/duallife/projects/ARM/ARM/extra_packages/install/interface/share/interface/hook/ld_library_path_lib.ps1'
+[3.007s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/duallife/projects/ARM/ARM/extra_packages/install/interface/share/interface/hook/ld_library_path_lib.dsv'
+[3.007s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/duallife/projects/ARM/ARM/extra_packages/install/interface/share/interface/hook/ld_library_path_lib.sh'
+[3.007s] Level 1:colcon.colcon_core.environment:checking '/home/duallife/projects/ARM/ARM/extra_packages/install/interface/bin'
+[3.007s] Level 1:colcon.colcon_core.environment:checking '/home/duallife/projects/ARM/ARM/extra_packages/install/interface/lib/pkgconfig/interface.pc'
+[3.007s] Level 1:colcon.colcon_core.environment:checking '/home/duallife/projects/ARM/ARM/extra_packages/install/interface/lib/python3.10/site-packages'
+[3.007s] Level 1:colcon.colcon_core.environment:checking '/home/duallife/projects/ARM/ARM/extra_packages/install/interface/bin'
+[3.008s] INFO:colcon.colcon_core.shell:Creating package script '/home/duallife/projects/ARM/ARM/extra_packages/install/interface/share/interface/package.ps1'
+[3.008s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/duallife/projects/ARM/ARM/extra_packages/install/interface/share/interface/package.dsv'
+[3.009s] INFO:colcon.colcon_core.shell:Creating package script '/home/duallife/projects/ARM/ARM/extra_packages/install/interface/share/interface/package.sh'
+[3.009s] INFO:colcon.colcon_core.shell:Creating package script '/home/duallife/projects/ARM/ARM/extra_packages/install/interface/share/interface/package.bash'
+[3.009s] INFO:colcon.colcon_core.shell:Creating package script '/home/duallife/projects/ARM/ARM/extra_packages/install/interface/share/interface/package.zsh'
+[3.010s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/duallife/projects/ARM/ARM/extra_packages/install/interface/share/colcon-core/packages/interface)
+[3.090s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(interface)
+[3.090s] Level 1:colcon.colcon_core.environment:checking '/home/duallife/projects/ARM/ARM/extra_packages/install/interface' for CMake module files
+[3.091s] Level 1:colcon.colcon_core.environment:checking '/home/duallife/projects/ARM/ARM/extra_packages/install/interface' for CMake config files
+[3.091s] Level 1:colcon.colcon_core.shell:create_environment_hook('interface', 'cmake_prefix_path')
+[3.091s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/duallife/projects/ARM/ARM/extra_packages/install/interface/share/interface/hook/cmake_prefix_path.ps1'
+[3.092s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/duallife/projects/ARM/ARM/extra_packages/install/interface/share/interface/hook/cmake_prefix_path.dsv'
+[3.092s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/duallife/projects/ARM/ARM/extra_packages/install/interface/share/interface/hook/cmake_prefix_path.sh'
+[3.093s] Level 1:colcon.colcon_core.environment:checking '/home/duallife/projects/ARM/ARM/extra_packages/install/interface/lib'
+[3.093s] Level 1:colcon.colcon_core.shell:create_environment_hook('interface', 'ld_library_path_lib')
+[3.093s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/duallife/projects/ARM/ARM/extra_packages/install/interface/share/interface/hook/ld_library_path_lib.ps1'
+[3.093s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/duallife/projects/ARM/ARM/extra_packages/install/interface/share/interface/hook/ld_library_path_lib.dsv'
+[3.093s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/duallife/projects/ARM/ARM/extra_packages/install/interface/share/interface/hook/ld_library_path_lib.sh'
+[3.093s] Level 1:colcon.colcon_core.environment:checking '/home/duallife/projects/ARM/ARM/extra_packages/install/interface/bin'
+[3.093s] Level 1:colcon.colcon_core.environment:checking '/home/duallife/projects/ARM/ARM/extra_packages/install/interface/lib/pkgconfig/interface.pc'
+[3.094s] Level 1:colcon.colcon_core.environment:checking '/home/duallife/projects/ARM/ARM/extra_packages/install/interface/lib/python3.10/site-packages'
+[3.094s] Level 1:colcon.colcon_core.environment:checking '/home/duallife/projects/ARM/ARM/extra_packages/install/interface/bin'
+[3.094s] INFO:colcon.colcon_core.shell:Creating package script '/home/duallife/projects/ARM/ARM/extra_packages/install/interface/share/interface/package.ps1'
+[3.094s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/duallife/projects/ARM/ARM/extra_packages/install/interface/share/interface/package.dsv'
+[3.095s] INFO:colcon.colcon_core.shell:Creating package script '/home/duallife/projects/ARM/ARM/extra_packages/install/interface/share/interface/package.sh'
+[3.095s] INFO:colcon.colcon_core.shell:Creating package script '/home/duallife/projects/ARM/ARM/extra_packages/install/interface/share/interface/package.bash'
+[3.095s] INFO:colcon.colcon_core.shell:Creating package script '/home/duallife/projects/ARM/ARM/extra_packages/install/interface/share/interface/package.zsh'
+[3.096s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/duallife/projects/ARM/ARM/extra_packages/install/interface/share/colcon-core/packages/interface)
+[3.096s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[3.096s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[3.096s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[3.096s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[3.100s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[3.100s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[3.100s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[3.110s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[3.111s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/duallife/projects/ARM/ARM/extra_packages/install/local_setup.ps1'
+[3.112s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/duallife/projects/ARM/ARM/extra_packages/install/_local_setup_util_ps1.py'
+[3.113s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/duallife/projects/ARM/ARM/extra_packages/install/setup.ps1'
+[3.114s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/duallife/projects/ARM/ARM/extra_packages/install/local_setup.sh'
+[3.114s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/duallife/projects/ARM/ARM/extra_packages/install/_local_setup_util_sh.py'
+[3.114s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/duallife/projects/ARM/ARM/extra_packages/install/setup.sh'
+[3.115s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/duallife/projects/ARM/ARM/extra_packages/install/local_setup.bash'
+[3.116s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/duallife/projects/ARM/ARM/extra_packages/install/setup.bash'
+[3.116s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/duallife/projects/ARM/ARM/extra_packages/install/local_setup.zsh'
+[3.117s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/duallife/projects/ARM/ARM/extra_packages/install/setup.zsh'
