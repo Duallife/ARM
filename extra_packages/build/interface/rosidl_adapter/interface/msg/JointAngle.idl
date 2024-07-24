@@ -1,0 +1,22 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from interface/msg/JointAngle.msg
+// generated code does not contain a copyright notice
+
+
+module interface {
+  module msg {
+    struct JointAngle {
+      float joint1;
+
+      float joint2;
+
+      float joint3;
+
+      float joint4;
+
+      float joint5;
+
+      float joint6;
+    };
+  };
+};
