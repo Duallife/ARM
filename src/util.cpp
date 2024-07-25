@@ -262,6 +262,7 @@ void motorSet(){
     else {
       J[i]->setMaxSpeed(maxSpeed * 0.05);
       J[i]->setAcceleration(maxAccel * 0.05);
+      // set
     }
   }
   // tftPrint("Joint Theta", 1);
