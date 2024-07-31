@@ -8,6 +8,7 @@
 #include <AccelStepper.h>
 #include <SimpleRotary.h>
 #include <TFT_eSPI.h>
+#include <ESP32Servo.h>
 
 #include <micro_ros_platformio.h>
 #include <rcl/rcl.h>
@@ -52,7 +53,7 @@
 #define MOTOR6_STEP 4
 #define MOTOR6_DIR 0
 
-#define servo 33
+#define SERVO 33
 
 #define ENABLEPIN 32
 
@@ -81,6 +82,7 @@ void setTheta(double t[MOTOR_NUM]);
 void setTarget(double input[4][4], double target[4][4]);
 void callback_subscription(const void* msgin);
 void getCurrentPosition();
+void servoControl(int angle);
 
 void motorTask_handler(void *pvParameters);
 void sideTask_handler(void *pvParameters);

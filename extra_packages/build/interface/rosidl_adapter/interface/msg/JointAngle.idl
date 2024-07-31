@@ -17,6 +17,8 @@ module interface {
       float joint5;
 
       float joint6;
+
+      int32 gripper;
     };
   };
 };

@@ -44,6 +44,7 @@ struct JointAngle_
       this->joint4 = 0.0f;
       this->joint5 = 0.0f;
       this->joint6 = 0.0f;
+      this->gripper = 0l;
     }
   }
 
@@ -59,6 +60,7 @@ struct JointAngle_
       this->joint4 = 0.0f;
       this->joint5 = 0.0f;
       this->joint6 = 0.0f;
+      this->gripper = 0l;
     }
   }
 
@@ -81,6 +83,9 @@ struct JointAngle_
   using _joint6_type =
     float;
   _joint6_type joint6;
+  using _gripper_type =
+    int32_t;
+  _gripper_type gripper;
 
   // setters for named parameter idiom
   Type & set__joint1(
@@ -117,6 +122,12 @@ struct JointAngle_
     const float & _arg)
   {
     this->joint6 = _arg;
+    return *this;
+  }
+  Type & set__gripper(
+    const int32_t & _arg)
+  {
+    this->gripper = _arg;
     return *this;
   }
 
@@ -178,6 +189,9 @@ struct JointAngle_
       return false;
     }
     if (this->joint6 != other.joint6) {
+      return false;
+    }
+    if (this->gripper != other.gripper) {
       return false;
     }
     return true;

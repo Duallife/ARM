@@ -26,6 +26,7 @@ typedef struct interface__msg__JointAngle
   float joint4;
   float joint5;
   float joint6;
+  int32_t gripper;
 } interface__msg__JointAngle;
 
 // Struct for a sequence of interface__msg__JointAngle.

@@ -64,6 +64,13 @@ inline void to_flow_style_yaml(
   {
     out << "joint6: ";
     rosidl_generator_traits::value_to_yaml(msg.joint6, out);
+    out << ", ";
+  }
+
+  // member: gripper
+  {
+    out << "gripper: ";
+    rosidl_generator_traits::value_to_yaml(msg.gripper, out);
   }
   out << "}";
 }  // NOLINT(readability/fn_size)
@@ -129,6 +136,16 @@ inline void to_block_style_yaml(
     }
     out << "joint6: ";
     rosidl_generator_traits::value_to_yaml(msg.joint6, out);
+    out << "\n";
+  }
+
+  // member: gripper
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "gripper: ";
+    rosidl_generator_traits::value_to_yaml(msg.gripper, out);
     out << "\n";
   }
 }  // NOLINT(readability/fn_size)

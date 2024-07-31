@@ -44,6 +44,8 @@ cdr_serialize(
   cdr << ros_message.joint5;
   // Member: joint6
   cdr << ros_message.joint6;
+  // Member: gripper
+  cdr << ros_message.gripper;
   return true;
 }
 
@@ -70,6 +72,9 @@ cdr_deserialize(
 
   // Member: joint6
   cdr >> ros_message.joint6;
+
+  // Member: gripper
+  cdr >> ros_message.gripper;
 
   return true;
 }
@@ -120,6 +125,12 @@ get_serialized_size(
   // Member: joint6
   {
     size_t item_size = sizeof(ros_message.joint6);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // Member: gripper
+  {
+    size_t item_size = sizeof(ros_message.gripper);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -201,6 +212,15 @@ max_serialized_size_JointAngle(
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
 
+  // Member: gripper
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint32_t);
+    current_alignment += array_size * sizeof(uint32_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
+  }
+
   size_t ret_val = current_alignment - initial_alignment;
   if (is_plain) {
     // All members are plain, and type is not empty.
@@ -209,7 +229,7 @@ max_serialized_size_JointAngle(
     using DataType = interface::msg::JointAngle;
     is_plain =
       (
-      offsetof(DataType, joint6) +
+      offsetof(DataType, gripper) +
       last_member_size
       ) == ret_val;
   }

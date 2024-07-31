@@ -23,6 +23,7 @@ interface__msg__JointAngle__init(interface__msg__JointAngle * msg)
   // joint4
   // joint5
   // joint6
+  // gripper
   return true;
 }
 
@@ -38,6 +39,7 @@ interface__msg__JointAngle__fini(interface__msg__JointAngle * msg)
   // joint4
   // joint5
   // joint6
+  // gripper
 }
 
 bool
@@ -70,6 +72,10 @@ interface__msg__JointAngle__are_equal(const interface__msg__JointAngle * lhs, co
   if (lhs->joint6 != rhs->joint6) {
     return false;
   }
+  // gripper
+  if (lhs->gripper != rhs->gripper) {
+    return false;
+  }
   return true;
 }
 
@@ -93,6 +99,8 @@ interface__msg__JointAngle__copy(
   output->joint5 = input->joint5;
   // joint6
   output->joint6 = input->joint6;
+  // gripper
+  output->gripper = input->gripper;
   return true;
 }
 

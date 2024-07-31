@@ -63,6 +63,7 @@ class JointAngle(metaclass=Metaclass_JointAngle):
         '_joint4',
         '_joint5',
         '_joint6',
+        '_gripper',
     ]
 
     _fields_and_field_types = {
@@ -72,6 +73,7 @@ class JointAngle(metaclass=Metaclass_JointAngle):
         'joint4': 'float',
         'joint5': 'float',
         'joint6': 'float',
+        'gripper': 'int32',
     }
 
     SLOT_TYPES = (
@@ -81,6 +83,7 @@ class JointAngle(metaclass=Metaclass_JointAngle):
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
+        rosidl_parser.definition.BasicType('int32'),  # noqa: E501
     )
 
     def __init__(self, **kwargs):
@@ -93,6 +96,7 @@ class JointAngle(metaclass=Metaclass_JointAngle):
         self.joint4 = kwargs.get('joint4', float())
         self.joint5 = kwargs.get('joint5', float())
         self.joint6 = kwargs.get('joint6', float())
+        self.gripper = kwargs.get('gripper', int())
 
     def __repr__(self):
         typename = self.__class__.__module__.split('.')
@@ -134,6 +138,8 @@ class JointAngle(metaclass=Metaclass_JointAngle):
         if self.joint5 != other.joint5:
             return False
         if self.joint6 != other.joint6:
+            return False
+        if self.gripper != other.gripper:
             return False
         return True
 
@@ -231,3 +237,18 @@ class JointAngle(metaclass=Metaclass_JointAngle):
             assert not (value < -3.402823466e+38 or value > 3.402823466e+38) or math.isinf(value), \
                 "The 'joint6' field must be a float in [-3.402823466e+38, 3.402823466e+38]"
         self._joint6 = value
+
+    @builtins.property
+    def gripper(self):
+        """Message field 'gripper'."""
+        return self._gripper
+
+    @gripper.setter
+    def gripper(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, int), \
+                "The 'gripper' field must be of type 'int'"
+            assert value >= -2147483648 and value < 2147483648, \
+                "The 'gripper' field must be an integer in [-2147483648, 2147483647]"
+        self._gripper = value

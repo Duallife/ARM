@@ -4,6 +4,7 @@
 TFT_eSPI tft = TFT_eSPI();  // Invoke custom library
 TFT_eSprite spr = TFT_eSprite(&tft);
 int buffer = 0;
+bool grab = false;
 
 void cleanScreen()  {
   buffer = 0;
@@ -90,7 +91,15 @@ void click() {
       break;
     case ROS:
       tftPrint("ROS action start", true);
-      runMotors();
+      if (grab) {
+        servoControl(30);
+        grab = false;
+      } else {
+        servoControl(190);
+        grab = true;
+      }
+      tftPrint("GRAB: " + grab, true);
+      // runMotors();
       break;
     default:
       break;

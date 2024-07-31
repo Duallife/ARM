@@ -104,6 +104,15 @@ bool interface__msg__joint_angle__convert_from_py(PyObject * _pymsg, void * _ros
     ros_message->joint6 = (float)PyFloat_AS_DOUBLE(field);
     Py_DECREF(field);
   }
+  {  // gripper
+    PyObject * field = PyObject_GetAttrString(_pymsg, "gripper");
+    if (!field) {
+      return false;
+    }
+    assert(PyLong_Check(field));
+    ros_message->gripper = (int32_t)PyLong_AsLong(field);
+    Py_DECREF(field);
+  }
 
   return true;
 }
@@ -186,6 +195,17 @@ PyObject * interface__msg__joint_angle__convert_to_py(void * raw_ros_message)
     field = PyFloat_FromDouble(ros_message->joint6);
     {
       int rc = PyObject_SetAttrString(_pymessage, "joint6", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // gripper
+    PyObject * field = NULL;
+    field = PyLong_FromLong(ros_message->gripper);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "gripper", field);
       Py_DECREF(field);
       if (rc) {
         return NULL;

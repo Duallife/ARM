@@ -79,6 +79,11 @@ static bool _JointAngle__cdr_serialize(
     cdr << ros_message->joint6;
   }
 
+  // Field name: gripper
+  {
+    cdr << ros_message->gripper;
+  }
+
   return true;
 }
 
@@ -119,6 +124,11 @@ static bool _JointAngle__cdr_deserialize(
   // Field name: joint6
   {
     cdr >> ros_message->joint6;
+  }
+
+  // Field name: gripper
+  {
+    cdr >> ros_message->gripper;
   }
 
   return true;
@@ -171,6 +181,12 @@ size_t get_serialized_size_interface__msg__JointAngle(
   // field.name joint6
   {
     size_t item_size = sizeof(ros_message->joint6);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name gripper
+  {
+    size_t item_size = sizeof(ros_message->gripper);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -251,6 +267,14 @@ size_t max_serialized_size_interface__msg__JointAngle(
     current_alignment += array_size * sizeof(uint32_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
+  // member: gripper
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint32_t);
+    current_alignment += array_size * sizeof(uint32_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
+  }
 
   size_t ret_val = current_alignment - initial_alignment;
   if (is_plain) {
@@ -260,7 +284,7 @@ size_t max_serialized_size_interface__msg__JointAngle(
     using DataType = interface__msg__JointAngle;
     is_plain =
       (
-      offsetof(DataType, joint6) +
+      offsetof(DataType, gripper) +
       last_member_size
       ) == ret_val;
   }

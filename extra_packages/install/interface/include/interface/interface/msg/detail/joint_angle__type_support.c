@@ -31,7 +31,7 @@ void interface__msg__JointAngle__rosidl_typesupport_introspection_c__JointAngle_
   interface__msg__JointAngle__fini(message_memory);
 }
 
-static rosidl_typesupport_introspection_c__MessageMember interface__msg__JointAngle__rosidl_typesupport_introspection_c__JointAngle_message_member_array[6] = {
+static rosidl_typesupport_introspection_c__MessageMember interface__msg__JointAngle__rosidl_typesupport_introspection_c__JointAngle_message_member_array[7] = {
   {
     "joint1",  // name
     rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
@@ -133,13 +133,30 @@ static rosidl_typesupport_introspection_c__MessageMember interface__msg__JointAn
     NULL,  // fetch(index, &value) function pointer
     NULL,  // assign(index, value) function pointer
     NULL  // resize(index) function pointer
+  },
+  {
+    "gripper",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_INT32,  // type
+    0,  // upper bound of string
+    NULL,  // members of sub message
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(interface__msg__JointAngle, gripper),  // bytes offset in struct
+    NULL,  // default value
+    NULL,  // size() function pointer
+    NULL,  // get_const(index) function pointer
+    NULL,  // get(index) function pointer
+    NULL,  // fetch(index, &value) function pointer
+    NULL,  // assign(index, value) function pointer
+    NULL  // resize(index) function pointer
   }
 };
 
 static const rosidl_typesupport_introspection_c__MessageMembers interface__msg__JointAngle__rosidl_typesupport_introspection_c__JointAngle_message_members = {
   "interface__msg",  // message namespace
   "JointAngle",  // message name
-  6,  // number of fields
+  7,  // number of fields
   sizeof(interface__msg__JointAngle),
   interface__msg__JointAngle__rosidl_typesupport_introspection_c__JointAngle_message_member_array,  // message members
   interface__msg__JointAngle__rosidl_typesupport_introspection_c__JointAngle_init_function,  // function to initialize message memory (memory has to be allocated)

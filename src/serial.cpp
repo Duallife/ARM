@@ -40,6 +40,8 @@ void serialTask(){
     else if (strcmp(word, "POS") == 0){ switchIDLE();getCurrentPosition();}
     else if (strcmp(word, "RUN") == 0){ runMotors();}
     else if (strcmp(word, "STOP") == 0){ forceStop();}
+    else if (strcmp(word, "GRAB") == 0){ servoControl(180); tftPrint("GRAB", 1);}
+    else if (strcmp(word, "DROP") == 0){ servoControl(30); tftPrint("DROP", 1);}
     
     
     switch (menu) {

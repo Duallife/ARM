@@ -21,16 +21,32 @@ namespace msg
 namespace builder
 {
 
+class Init_JointAngle_gripper
+{
+public:
+  explicit Init_JointAngle_gripper(::interface::msg::JointAngle & msg)
+  : msg_(msg)
+  {}
+  ::interface::msg::JointAngle gripper(::interface::msg::JointAngle::_gripper_type arg)
+  {
+    msg_.gripper = std::move(arg);
+    return std::move(msg_);
+  }
+
+private:
+  ::interface::msg::JointAngle msg_;
+};
+
 class Init_JointAngle_joint6
 {
 public:
   explicit Init_JointAngle_joint6(::interface::msg::JointAngle & msg)
   : msg_(msg)
   {}
-  ::interface::msg::JointAngle joint6(::interface::msg::JointAngle::_joint6_type arg)
+  Init_JointAngle_gripper joint6(::interface::msg::JointAngle::_joint6_type arg)
   {
     msg_.joint6 = std::move(arg);
-    return std::move(msg_);
+    return Init_JointAngle_gripper(msg_);
   }
 
 private:

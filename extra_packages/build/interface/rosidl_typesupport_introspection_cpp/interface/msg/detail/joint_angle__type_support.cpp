@@ -37,7 +37,7 @@ void JointAngle_fini_function(void * message_memory)
   typed_message->~JointAngle();
 }
 
-static const ::rosidl_typesupport_introspection_cpp::MessageMember JointAngle_message_member_array[6] = {
+static const ::rosidl_typesupport_introspection_cpp::MessageMember JointAngle_message_member_array[7] = {
   {
     "joint1",  // name
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_FLOAT,  // type
@@ -139,13 +139,30 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember JointAngle_me
     nullptr,  // fetch(index, &value) function pointer
     nullptr,  // assign(index, value) function pointer
     nullptr  // resize(index) function pointer
+  },
+  {
+    "gripper",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_INT32,  // type
+    0,  // upper bound of string
+    nullptr,  // members of sub message
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(interface::msg::JointAngle, gripper),  // bytes offset in struct
+    nullptr,  // default value
+    nullptr,  // size() function pointer
+    nullptr,  // get_const(index) function pointer
+    nullptr,  // get(index) function pointer
+    nullptr,  // fetch(index, &value) function pointer
+    nullptr,  // assign(index, value) function pointer
+    nullptr  // resize(index) function pointer
   }
 };
 
 static const ::rosidl_typesupport_introspection_cpp::MessageMembers JointAngle_message_members = {
   "interface::msg",  // message namespace
   "JointAngle",  // message name
-  6,  // number of fields
+  7,  // number of fields
   sizeof(interface::msg::JointAngle),
   JointAngle_message_member_array,  // message members
   JointAngle_init_function,  // function to initialize message memory (memory has to be allocated)

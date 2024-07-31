@@ -8,14 +8,17 @@ const double homePosition[MOTOR_NUM] = {0, PI/2, 0, 0, 0, 0};
 #ifndef USEROS
   const float flip[6] = {-1.5,1.5,-1.5,-1.6,-1.5,-0.1};
 #else
-  const float flip[6] = {-1.5,1.5,-1.5,1.6,1.5,-0.1};
+  const float flip[6] = {-1.5,1.5,-1.5,1.6,-1.5,-0.1};
 #endif
 SimpleRotary rotary(ENA, ENB, SW);
-const int maxSpeed = 1500;
-const int maxAccel = 1500;
+const int maxSpeed = 1000;
+const int maxAccel = 1000;
+
+Servo myservo;
+int gripperAngle = 0;
 
 // MODE
-mode menu = InvK;
+mode menu = IDLE;
 static bool isMoving = false;
 
 // ROS
@@ -57,9 +60,10 @@ void tasks_init() {
   xMutex2 = xSemaphoreCreateMutex();
   #ifdef USEROS
     tftPrint("ROS USE", 1);
-    xTaskCreatePinnedToCore(microRosTask_handler, "microRosTask", 10240, NULL, 2, NULL, 0);
-    xTaskCreatePinnedToCore(motorTask_handler, "motorTask", 4096, NULL, 1, NULL, 1);
-    xTaskCreatePinnedToCore(motor_handler, "motor", 4096, NULL, 1, NULL, 0);
+    xTaskCreatePinnedToCore(microRosTask_handler, "microRosTask", 10240, NULL, 3, NULL, 0);
+    xTaskCreatePinnedToCore(motorTask_handler, "motorTask", 4096, NULL, 2, NULL, 1);
+    xTaskCreatePinnedToCore(motor_handler, "motor", 4096, NULL, 2, NULL, 0);
+    xTaskCreatePinnedToCore(sideTask_handler, "sideTask", 4096, NULL, 1, NULL, 1); vTaskDelay(100);
   #else
     tftPrint("Serial USE", 1);
     xTaskCreate(serialTask_handler, "serialTask", 4096, NULL, 2, NULL); vTaskDelay(100);
@@ -85,6 +89,12 @@ void util_init() {
     }
     pinMode(ENABLEPIN, OUTPUT);
     digitalWrite(ENABLEPIN, LOW);
+    ESP32PWM::allocateTimer(0);
+    ESP32PWM::allocateTimer(1);
+    ESP32PWM::allocateTimer(2);
+    ESP32PWM::allocateTimer(3);
+    myservo.setPeriodHertz(50);    // standard 50 hz servo
+    myservo.attach(SERVO, 1000, 2000); // attaches the servo on pin 18 to the servo object
     tftPrint("Checking Motors....", 1);
     Serial.println("Checking Motors....");
     motorCheck();
@@ -121,11 +131,14 @@ void callback_subscription(const void *msgin)
   for (int i = 0; i < MOTOR_NUM; i++){
     if (fabs(joint_angle[i] - theta[i]) > TOLERANCE){
       theta[i] = joint_angle[i];
-      // J[0]->moveTo(theta[0] / PI * 8000 * flip[0]);
-      // tftPrint("ROS CHANGE", 1);
     }
   }
+  gripperAngle = msg->gripper;
   cleanScreen();
+}
+
+void servoControl(int angle){
+  myservo.write(angle);
 }
 
 void motorCheck(){
@@ -239,8 +252,6 @@ void microRosTask(){
   rclc_executor_spin_some(&executor, RCL_MS_TO_NS(100));
 }
 
-int change = 0;
-
 void motorSet(){
   float dist[6] = {0, 0, 0, 0, 0, 0};
   float maxDist = 0;
@@ -262,10 +273,10 @@ void motorSet(){
     else {
       J[i]->setMaxSpeed(maxSpeed * 0.05);
       J[i]->setAcceleration(maxAccel * 0.05);
-      // set
     }
   }
-  // tftPrint("Joint Theta", 1);
+  myservo.write(gripperAngle);
+  tftPrint("Gripper: " + String(gripperAngle), 1);
   for (int i = 0; i < MOTOR_NUM; i++){
     tftPrint("Motor " + String(i) + " : " + String(theta[i]) + " Sp " + String(dist[i]/maxDist * maxAccel), 1);
   }
@@ -313,9 +324,9 @@ void motorRunTask(){
 
 void sideTask_handler(void *pvParameters) {
     while (1) {
-    if (xSemaphoreTake(xMutex, portMAX_DELAY) == pdTRUE) {
+    if (xSemaphoreTake(xMutex2, portMAX_DELAY) == pdTRUE) {
         sideTask();
-        xSemaphoreGive(xMutex);
+        xSemaphoreGive(xMutex2);
     }
     vTaskDelay(5); // Adjust delay as needed
   }
